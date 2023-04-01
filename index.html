@@ -1,1 +1,99 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mi página académica</title>
+	<style>
+	/* Estilos para las pestañas */
+	.tab {
+	  overflow: hidden;
+	  background-color: #f1f1f1;
+	}
+
+	.tab button {
+	  background-color: inherit;
+	  float: left;
+	  border: none;
+	  outline: none;
+	  cursor: pointer;
+	  padding: 14px 16px;
+	  transition: 0.3s;
+	  font-size: 17px;
+	}
+
+	.tab button:hover {
+	  background-color: #ddd;
+	}
+
+	.tab button.active {
+	  background-color: #ccc;
+	}
+
+	/* Estilos para el contenido de las pestañas */
+	.tabcontent {
+	  display: none;
+	  padding: 6px 12px;
+	  border: 1px solid #ccc;
+	  border-top: none;
+	}
+
+	.tabcontent.active {
+	  display: block;
+	}
+	</style>
+</head>
+<body>
+
+	<!-- Pestañas -->
+	<div class="tab">
+	  <button class="tablinks" onclick="openTab(event, 'home')">Home</button>
+	  <button class="tablinks" onclick="openTab(event, 'cv')">CV</button>
+	  <button class="tablinks" onclick="openTab(event, 'professional_projects')">Professional Projects</button>
+	  <button class="tablinks" onclick="openTab(event, 'research_projects')">Research Projects</button>
+	  <button class="tablinks" onclick="openTab(event, 'teaching')">Teaching</button>
+	</div>
+
+	<!-- Contenido de las pestañas -->
+	<div id="home" class="tabcontent active">
+	  <h3>Home</h3>
+	  <p>Bienvenido a mi página académica.</p>
+	</div>
+
+	<div id="cv" class="tabcontent">
+	  <h3>CV</h3>
+	  <p>Aquí puedes encontrar mi CV.</p>
+	</div>
+
+	<div id="professional_projects" class="tabcontent">
+	  <h3>Professional Projects</h3>
+	  <p>Estos son algunos de mis proyectos profesionales.</p>
+	</div>
+
+	<div id="research_projects" class="tabcontent">
+	  <h3>Research Projects</h3>
+	  <p>Estos son algunos de mis proyectos de investigación.</p>
+	</div>
+
+	<div id="teaching" class="tabcontent">
+	  <h3>Teaching</h3>
+	  <p>Aquí puedes encontrar información sobre mis actividades de enseñanza.</p>
+	</div>
+
+	<!-- Script para cambiar de pestaña -->
+	<script>
+		function openTab(evt, tabName) {
+		  var i, tabcontent, tablinks;
+		  tabcontent = document.getElementsByClassName("tabcontent");
+		  for (i = 0; i < tabcontent.length; i++) {
+		    tabcontent[i].className = tabcontent[i].className.replace(" active", "");
+		  }
+		  tablinks = document.getElementsByClassName("tablinks");
+		  for (i = 0; i < tablinks.length; i++) {
+		    tablinks[i].className = tablinks[i].className.replace(" active", "");
+		  }
+		  document.getElementById(tabName).className += " active";
+		  evt.currentTarget.className += " active";
+		}
+	</script>
+
+</body>
+</html>
